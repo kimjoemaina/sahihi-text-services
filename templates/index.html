@@ -60,9 +60,11 @@
                 <div class="row">
                     {% for portfolio_item in portfolio_items %}
                     <div class="col-lg-4 col-sm-6 mb-4">
-                        <!-- Portfolio item 1-->
+                        <!-- Portfolio item -->
                         <div class="portfolio-item">
-                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1">
+                            
+                            <!-- <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1"> -->
+                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal{{ portfolio_item.id }}">
                                 <div class="portfolio-hover">
                                     <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                                 </div>

@@ -1,3 +1,4 @@
+from decimal import Context
 from django.shortcuts import render
 from .models import PortfolioItem
 
@@ -5,6 +6,7 @@ from .models import PortfolioItem
 def home(request):
     try:
         portfolio_items = PortfolioItem.objects.all()
+
         context = {
                 'portfolio_items' : portfolio_items
             }

@@ -1,9 +1,9 @@
-from distutils.command.upload import upload
 from django.db import models
 
 # Create your models here.
 class PortfolioItem(models.Model):
     heading = models.CharField(max_length=120, blank=False)
+    description = models.TextField(max_length=500, blank=False)
     sub_heading = models.CharField(max_length=120, blank=False)
     category = models.CharField(max_length=120, blank=True)
     image = models.ImageField(upload_to="photos/portfolio", blank=False)
