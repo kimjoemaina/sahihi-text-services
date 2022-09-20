@@ -28,6 +28,7 @@ class TeamMember(models.Model):
     joined_on = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.name
+        full_name = f'{self.first_name} {self.last_name}'
+        return full_name
 
 

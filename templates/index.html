@@ -128,19 +128,63 @@
                     <h2 class="section-heading text-uppercase">Our Founder</h2>
                     <h3 class="section-subheading text-muted"></h3>
                 </div>
-                <div class="row">
+                
+                <div class="row"> 
+                    {% for team_member in team_members %}
+                    {% if team_members.count == 1 %}
                     <div class="col-lg-12">
                         <div class="team-member">
-                            <img class="mx-auto rounded-circle" src="{% static 'assets/img/team/joe.jpg' %}" alt="..." />
-                            <h4>Joe Kimani</h4>
-                            <p class="text-muted">Founder and CEO</p>
-                            <a class="btn btn-dark btn-social mx-2" href="https://twitter.com/joemainak" aria-label="Joe Kimani Twitter Profile"><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-dark btn-social mx-2" href="https://web.facebook.com/joemainakimani/" aria-label="Joe Kimani Facebook Profile"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-dark btn-social mx-2" href="https://www.linkedin.com/in/joemainak/" aria-label="Joe Kimani LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
+                            <img class="mx-auto rounded-circle" src="{{ team_member.team_member_img.url }}" alt="{{ team_member.job_title}}" />
+                            <h4>{{ team_member.first_name }} {{ team_member.last_name }}</h4>
+                            {% if team_member.twitter %}
+                            <a class="btn btn-dark btn-social mx-2" href="{{ team_member.twitter }}" aria-label="{{ team_member.first_name }} Twitter Profile"><i class="fab fa-twitter"></i></a>
+                            {% endif %}
+                            {% if team_member.facebook %}
+                            <a class="btn btn-dark btn-social mx-2" href="{{ team_member.facebook }}" aria-label="{{ team_member.first_name }} Facebook Profile"><i class="fab fa-facebook-f"></i></a>
+                            {% endif %}
+                            {% if team_member.linkedin %}
+                            <a class="btn btn-dark btn-social mx-2" href="{{ team_member.linkedin }}" aria-label="{{ team_member.first_name }} LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
+                            {% endif %}
                         </div>
                     </div>
-                    
+                    {% elif team_members.count == 2 %}
+                    <div class="col-lg-6">
+                        <div class="team-member">
+                            <img class="mx-auto rounded-circle" src="{{ team_member.team_member_img.url }}" alt="{{ team_member.job_title}}" />
+                            <h4>{{ team_member.first_name }} {{ team_member.last_name }}</h4>
+                            <p class="text-muted">{{ team_member.job_title }}</p>
+                            {% if team_member.twitter %}
+                            <a class="btn btn-dark btn-social mx-2" href="{{ team_member.twitter }}" aria-label="{{ team_member.first_name }} Twitter Profile"><i class="fab fa-twitter"></i></a>
+                            {% endif %}
+                            {% if team_member.facebook %}
+                            <a class="btn btn-dark btn-social mx-2" href="{{ team_member.facebook }}" aria-label="{{ team_member.first_name }} Facebook Profile"><i class="fab fa-facebook-f"></i></a>
+                            {% endif %}
+                            {% if team_member.linkedin %}
+                            <a class="btn btn-dark btn-social mx-2" href="{{ team_member.linkedin }}" aria-label="{{ team_member.first_name }} LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
+                            {% endif %}
+                        </div>
+                    </div>
+                    {% else %}
+                    <div class="col-lg-4">
+                        <div class="team-member">
+                            <img class="mx-auto rounded-circle" src="{{ team_member.team_member_img.url }}" alt="{{ team_member.job_title}}" />
+                            <h4>{{ team_member.first_name }} {{ team_member.last_name }}</h4>
+                            <p class="text-muted">{{ team_member.job_title }}</p>
+                            {% if team_member.twitter %}
+                            <a class="btn btn-dark btn-social mx-2" href="{{ team_member.twitter }}" aria-label="{{ team_member.first_name }} Twitter Profile"><i class="fab fa-twitter"></i></a>
+                            {% endif %}
+                            {% if team_member.facebook %}
+                            <a class="btn btn-dark btn-social mx-2" href="{{ team_member.facebook }}" aria-label="{{ team_member.first_name }} Facebook Profile"><i class="fab fa-facebook-f"></i></a>
+                            {% endif %}
+                            {% if team_member.linkedin %}
+                            <a class="btn btn-dark btn-social mx-2" href="{{ team_member.linkedin }}" aria-label="{{ team_member.first_name }} LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
+                            {% endif %}
+                        </div>
+                    </div>
+                    {% endif %}
+                    {% endfor %}
                 </div>
+                
                 <div class="row">
                     <div class="col-lg-8 mx-auto text-center"><p class="large text-muted"><em>Everyone has dreams. Success comes to those who act.<br>~ Sam Gupta ~</em></p></div>
                 </div>
