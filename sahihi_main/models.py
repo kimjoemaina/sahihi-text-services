@@ -1,4 +1,5 @@
 from django.db import models
+from ckeditor.fields import RichTextField
 
 # Create your models here.
 class PortfolioItem(models.Model):
@@ -31,4 +32,14 @@ class TeamMember(models.Model):
         full_name = f'{self.first_name} {self.last_name}'
         return full_name
 
+class BlogPost(models.Model):
+    title = models.CharField(max_length=120, blank=False)
+    sub_title = models.CharField(max_length=120, blank=True)
+    slug = models.SlugField(max_length=120, unique=True, blank=False)
+    masthead_image = models.ImageField(upload_to='photos/blog', blank=True)
+    content = RichTextField(blank=False)
+    published_on = models.DateTimeField(auto_now_add=True)
+    publisher = models.CharField(max_length=120, blank=False)
 
+    def __str__(self):
+        return self.title
