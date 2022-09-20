@@ -1,8 +1,9 @@
 from django.core.mail import send_mail
-from django.shortcuts import render, redirect
-from .models import PortfolioItem, TeamMember
+from django.shortcuts import render, redirect, get_object_or_404
+from .models import PortfolioItem, TeamMember, BlogPost
 from .forms import ContactForm
 from django.template.loader import render_to_string
+from django.views import generic
 
 # Create your views here.
 def home(request):
@@ -45,7 +46,25 @@ def home(request):
         return render(request, 'index.html')
     
 def blog(request):
-    return render(request, 'blog/blog.html')
+    blog_posts = BlogPost.objects.all()
+    
+    context = {
+        'blog_posts' : blog_posts
+    }
 
-def post(request):
-    return render(request, 'blog/post.html')
+    return render(request, 'blog/blog.html', context)
+
+def article(request, slug):
+
+    post = get_object_or_404(BlogPost, slug=slug)
+    
+    context = {
+        'post' : post
+    }
+
+
+    return render(request, 'blog/post.html', context)
+
+# class BlogPost(generic.DetailView):
+#     model = BlogPost
+#     template_name = 'blog/post.html'

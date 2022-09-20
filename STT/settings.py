@@ -44,7 +44,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'useraccounts',
-    'sahihi_main'
+    'sahihi_main',
+    'django_quill'
 ]
 
 MIDDLEWARE = [
