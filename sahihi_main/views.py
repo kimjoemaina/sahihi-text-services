@@ -70,9 +70,4 @@ def article(request, slug):
         'post' : post
     }
 
-
     return render(request, 'blog/post.html', context)
-
-# class BlogPost(generic.DetailView):
-#     model = BlogPost
-#     template_name = 'blog/post.html'
