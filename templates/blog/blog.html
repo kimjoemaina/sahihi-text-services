@@ -32,11 +32,30 @@
             <!-- Divider-->
             <hr class="my-4" />
             {% endfor %}
-            <!-- Pager-->
+            <!-- Paginator -->
+            <nav aria-label="Page navigation">
+                {% if blog_posts.has_other_pages %}
+                <ul class="pagination">
+                    {% if blog_posts.has_previous %}
+                  <li class="page-item"><a class="btn btn-primary" href="?page={{blog_posts.previous_page_number}}">← Newer Posts</a></li>
+                  {% else %}
+                  <li class="page-item"><a class="btn btn-primary disabled" href="#">← Newer Posts</a></li>
+                  {% endif %}
+                  {% for i in blog_posts.paginator.page_range %}
+                  {% if blog_posts.number == i%}
+                  <li class="page-item active"><a class="page-link" href="#">{{i}}</a></li>
+                  {% else %}
+                  <li class="page-item"><a class="page-link" href="?page={{i}}">{{i}}</a></li>
+                  {% endif %}
+                {% endfor %}
 
-            {% if blog_posts.count < 5 %}
-            {% else %}
-            <div class="d-flex justify-content-end mb-4"><a class="btn btn-primary text-uppercase" href="#!">Older Posts →</a></div>
+                  {% if blog_posts.has_next %}
+                  <li class="page-item"><a class="btn btn-primary" href="?page={{blog_posts.next_page_number}}">Older Posts →</a></li>
+                  {% else %}
+                  <li class="page-item"><a class="btn btn-primary disabled" href="#">Older Posts →</a></li>
+                  {% endif %}
+                </ul>
+            </nav>
             {% endif %}
         </div>
     </div>

@@ -1,9 +1,13 @@
+# Django Imports
 from django.core.mail import send_mail
 from django.shortcuts import render, redirect, get_object_or_404
+from django.template.loader import render_to_string
+from django.core.paginator import Paginator
+
+# Other imports
 from .models import PortfolioItem, TeamMember, BlogPost
 from .forms import ContactForm
-from django.template.loader import render_to_string
-from django.views import generic
+
 
 # Create your views here.
 def home(request):
@@ -47,9 +51,13 @@ def home(request):
     
 def blog(request):
     blog_posts = BlogPost.objects.all()
+    paginator = Paginator(blog_posts, 5)
+
+    page = request.GET.get('page')
+    posts = paginator.get_page(page)
     
     context = {
-        'blog_posts' : blog_posts
+        'blog_posts' : posts
     }
 
     return render(request, 'blog/blog.html', context)
