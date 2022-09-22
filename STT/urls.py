@@ -18,8 +18,12 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 
+
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('secure_login/', admin.site.urls),
     path('', include('sahihi_main.urls')),
     
-]+ static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
+] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
+
+handler404='sahihi_main.views.error_404'
+# handler500='sahihi_main.views.error_500'
