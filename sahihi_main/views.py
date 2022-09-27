@@ -34,7 +34,7 @@ def home(request):
                     }
                 )
 
-                send_mail(subject, message, email,['kimanijmaina@gmail.com'], html_message=html)
+                send_mail(subject, message, email, ['info@sahihitextservices.com'], html_message=html)
                 return redirect('home')
             else:
                 form = ContactForm()
