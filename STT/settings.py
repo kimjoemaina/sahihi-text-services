@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 from pathlib import Path
 import os
-# from decouple import config
+from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -28,7 +28,7 @@ SECRET_KEY = 'DIH$EyY)sb;SW5nN:{JK`DiYr*,@whK[F};?y1COQ.;?,5:-#!'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = config('DEBUG', default=False, cast=bool)
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -96,6 +96,17 @@ DATABASES = {
     }
 }
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': config('POSTGRES_DB'),       # Your PostgreSQL database name
+#         'USER': config('POSTGRES_USER'),           # Your PostgreSQL username
+#         'PASSWORD': config('POSTGRES_PASSWORD'),   # Your PostgreSQL password
+#         'HOST': config('POSTGRES_HOST'),        # Your PostgreSQL host (if running locally)
+#         'PORT': '5432',             # Default PostgreSQL port
+#     }
+# }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
@@ -131,8 +142,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = 'static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 STATICFILES_DIRS = [
     'STT/static'
 ]
