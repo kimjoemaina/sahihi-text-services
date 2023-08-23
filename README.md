@@ -58,7 +58,7 @@ The following is the project directory structure:
 
 ## Credits 🙌
 
-The frontend theme is from Start Boostrap [here](https://startbootstrap.com/theme/agency)
+The frontend theme is from Start Boostrap [here](https://startbootstrap.com/theme/agency).
 
 ## Contributing 📢
 
