@@ -36,12 +36,12 @@ The following is the project directory structure:
 1. Clone the repository.
 2. Create a `.env` file in the project root and populate with the necessary variables.
 
-    `POSTGRES_DB=your_database_name`
-    `POSTGRES_HOST=db`
-    `POSTGRES_USER=your_username`
-    `POSTGRES_PASSWORD=your_password`
-    `POSTGRES_HOST_AUTH_METHOD=trust`
-    `SECRET_KEY=your_secret_key`
+    -`POSTGRES_DB=your_database_name`
+    -`POSTGRES_HOST=db`
+    -`POSTGRES_USER=your_username`
+    -`POSTGRES_PASSWORD=your_password`
+    -`POSTGRES_HOST_AUTH_METHOD=trust`
+    -`SECRET_KEY=your_secret_key`
 
 ## Running the Application ▶️
 1. Launch the services in detached mode by runninng:
@@ -49,7 +49,9 @@ The following is the project directory structure:
      then:
         `docker-compose up -d`(Other services)
 
+<p align="center">
 `NB: You can integrate the wait-for-it.sh script since you'll find the app tries to connect to the db before it's ready. This may cause errors. The wait-for-it.sh script can be found [here](https://github.com/vishnubob/wait-for-it). If you opt to do this, please modify the frontend Dockerfile appropriately.` 
+</p>
 
 ## Customization 🧩
 - Modify the Database/Dockerfile, ./Dockerfile, and nginx/Dockerfile files to include any extra configurations or dependencies required by your application.
@@ -72,6 +74,6 @@ Buy me a coffee. It'll help me stay motivated! ☕
 
 ## Contact 🤙
 
-[Linkedin](https://www.linkedin.com/in/joemainak/)
+[LinkedIn](https://www.linkedin.com/in/joemainak/) 🔗
 
-[Twitter](https://twitter.com/joemainak)
+[X](https://x.com/joemainak) ❌
