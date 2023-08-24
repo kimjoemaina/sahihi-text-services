@@ -49,7 +49,7 @@ The following is the project directory structure:
      then:
         `docker-compose up -d`(Other services)
 
-`NB: You can integrate the wait-for-it.sh script since you'll find the app tries to connect to the db before it's ready. This may cause errors. The wait-for-it.sh script can be found [here](https://github.com/vishnubob/wait-for-it). If you opt to do this, please modify the frontend Dockerfile appropriately.` 
+`NB: You can integrate the wait-for-it.sh script since you'll find the app tries to connect to the db before it's ready. This may cause errors. The wait-for-it.sh script can be found `[here](https://github.com/vishnubob/wait-for-it)`. If you opt to do this, please modify the frontend Dockerfile appropriately.` 
 
 ## Customization 🧩
 - Modify the Database/Dockerfile, ./Dockerfile, and nginx/Dockerfile files to include any extra configurations or dependencies required by your application.
@@ -58,7 +58,7 @@ The following is the project directory structure:
 
 ## Credits 🙌
 
-The frontend theme is from Start Boostrap [here](https://startbootstrap.com/theme/agency).
+The frontend theme is from [Start Boostrap](https://startbootstrap.com/theme/agency).
 
 ## Contributing 📢
 
