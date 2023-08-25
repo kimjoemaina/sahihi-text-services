@@ -87,23 +87,23 @@ SECURE_CROSS_ORIGIN_OPENER_POLICY='same-origin-allow-popups'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
-
 # DATABASES = {
 #     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': config('POSTGRES_DB'),       # Your PostgreSQL database name
-#         'USER': config('POSTGRES_USER'),           # Your PostgreSQL username
-#         'PASSWORD': config('POSTGRES_PASSWORD'),   # Your PostgreSQL password
-#         'HOST': config('POSTGRES_HOST'),        # Your PostgreSQL host (if running locally)
-#         'PORT': '5432',             # Default PostgreSQL port
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': config('POSTGRES_DB'),       # Your PostgreSQL database name
+        'USER': config('POSTGRES_USER'),           # Your PostgreSQL username
+        'PASSWORD': config('POSTGRES_PASSWORD'),   # Your PostgreSQL password
+        'HOST': config('POSTGRES_HOST'),        # Your PostgreSQL host (if running locally)
+        'PORT': '5432',             # Default PostgreSQL port
+    }
+}
 
 
 # Password validation
